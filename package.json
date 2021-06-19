@@ -1,0 +1,21 @@
+{
+  "name": "myform",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "mocha --recursive"
+  },
+  "dependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mocha": "^9.0.1",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
+  }
+}
