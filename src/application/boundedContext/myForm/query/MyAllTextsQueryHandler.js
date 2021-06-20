@@ -5,7 +5,7 @@ class MyAllTextsQueryHandler {
 
     handle() {
         return this.myTextRepository.list().map(([id, value]) => ({
-            text: value, nbChars: value.length
+            text: value, nbChars: value.length, nbWords: value.trim().split(" ").length
         }));
     }
 }
