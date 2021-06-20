@@ -22,16 +22,6 @@ describe('Le controlleur de mon formulaire', () => {
                 called.should.be.true;
 
             })
-
-            it("doit renvoyer l'id du formulaire soumis", () => {
-                const sut = new MyFormController({
-                    dispatch: () => ({id: 1})
-                });
-
-                const result = sut.submitMyForm({myText: "Blabla"});
-
-                result.id.should.be.equals(1)
-            })
         })
         describe('quand on récupère tous mex textes', () => {
             it("doit dispatcher la query de la récupération de tous mex textes", () => {

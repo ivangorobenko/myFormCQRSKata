@@ -13,7 +13,6 @@ describe("L'endpoint pour poster un formulaire", () => {
 
             res.should.have.status(204);
             repositories.myTextRepository.list().should.not.be.empty;
-
             done();
         })
     })

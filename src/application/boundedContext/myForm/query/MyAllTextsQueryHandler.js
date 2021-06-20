@@ -4,7 +4,9 @@ class MyAllTextsQueryHandler {
     }
 
     handle() {
-        return this.myTextRepository.list().map(([id, value]) => value);
+        return this.myTextRepository.list().map(([id, value]) => ({
+            text: value, nbChars: value.length
+        }));
     }
 }
 
