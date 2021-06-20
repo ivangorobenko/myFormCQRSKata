@@ -11,7 +11,7 @@ const configureRoutes = (app, commandBus, queryBus) => {
         res.status(204).send(result)
     });
 
-    router.get('/myTextes', (req, res) => {
+    router.get('/myTexts', (req, res) => {
         const result = myFormController.getMyTexts();
         res.send(result)
     });
