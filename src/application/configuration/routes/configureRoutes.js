@@ -3,10 +3,16 @@ const router = express.Router();
 const MyFormController = require("../controller/MyFormController")
 
 
-const configureMyFormRoutes = (app, commandBus) => {
-    const myFormController = new MyFormController(commandBus);
+const configureRoutes = (app, commandBus, queryBus) => {
+    const myFormController = new MyFormController(commandBus, queryBus);
+
     router.post('/myForm', (req, res) => {
         const result = myFormController.submitMyForm(req.body);
+        res.status(204).send(result)
+    });
+
+    router.get('/myTextes', (req, res) => {
+        const result = myFormController.getMyTexts();
         res.send(result)
     });
 
@@ -20,4 +26,4 @@ const configureMyFormRoutes = (app, commandBus) => {
 }
 
 
-module.exports = configureMyFormRoutes;
+module.exports = configureRoutes;

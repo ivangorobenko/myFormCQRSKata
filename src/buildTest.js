@@ -5,7 +5,7 @@ const subscribeCommandHandlers = require("./application/configuration/command/su
 const subscribeQueryHandlers = require("./application/configuration/query/subscribeQueryHandlers")
 const Bus = require("./application/configuration/Bus")
 
-const buildApp = () => {
+const buildTest = () => {
     let app = createApp()
     const commandBus = new Bus()
     const queryBus = new Bus()
@@ -13,7 +13,7 @@ const buildApp = () => {
     subscribeCommandHandlers(commandBus, repositories)
     subscribeQueryHandlers(queryBus, repositories)
     configureMyFormRoutes(app, commandBus, queryBus)
-    return app;
+    return {app, repositories};
 }
 
-module.exports = buildApp;
+module.exports = buildTest;

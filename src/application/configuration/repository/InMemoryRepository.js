@@ -10,6 +10,10 @@ class InMemoryRepository {
     get(id) {
         return this.myForms.find(([key]) => key === id)
     }
+
+    list() {
+        return this.myForms;
+    }
 }
 
 module.exports = InMemoryRepository;

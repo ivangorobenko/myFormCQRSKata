@@ -1,15 +1,15 @@
 const { v4: uuidv4 } = require('uuid');
 
 class SubmitMyFormCommandHandler {
-    myFormRepository;
+    myTextRepository;
 
-    constructor(myFormRepository) {
-        this.myFormRepository = myFormRepository;
+    constructor(myTextRepository) {
+        this.myTextRepository = myTextRepository;
     }
 
     handle(command) {
         const id = uuidv4();
-        this.myFormRepository.save(id, command.myText)
+        this.myTextRepository.save(id, command.myText)
         return {id};
     }
 }

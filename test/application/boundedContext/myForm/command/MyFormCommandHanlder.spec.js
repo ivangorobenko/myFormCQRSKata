@@ -6,13 +6,13 @@ chai.should();
 
 
 describe('Le commande de soumission', () => {
-        it("doit enregistrer le formulaire soumis", () => {
-            const myFormRepository = new InMemoryRepository();
-            const sut = new MyFormCommandHandler(myFormRepository);
+        it("doit enregistrer le text saisi dans mo formulaire", () => {
+            const myTextRepository = new InMemoryRepository();
+            const sut = new MyFormCommandHandler(myTextRepository);
 
             const result = sut.handle(new SubmitMyFormCommand("Blablabla"))
 
-            const myText = myFormRepository.get(result.id);
+            const myText = myTextRepository.get(result.id);
             myText.should.be.deep.equals([result.id, "Blablabla"]);
 
         })
