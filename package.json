@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon src/server.js",
-    "test": "mocha --recursive"
+    "test": "mocha ./test --recursive"
   },
   "dependencies": {
     "chai": "^4.3.4",
